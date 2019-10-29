@@ -11,6 +11,9 @@ def place_zeichen(spielfeld,zeichen,position):
     spielfeld[position] = zeichen
 while True:
     print_spielfeld(liste_felder)
-    position = int(input("Wahle eine Position zwischen 0 und 8."))
+    try:
+        position = int(input("Wahle eine Position zwischen 0 und 8."))
+    except Exception as error:
+        print(error)
     place_zeichen(liste_felder,"x",position)
     print_spielfeld(liste_felder)
